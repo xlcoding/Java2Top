@@ -1,0 +1,16 @@
+.DS_Store
+*.log
+node_modules/
+*.bat
+web/
+.idea/
+./deploy.sh
+./web-deploy.sh
+*.py
+docs/.vuepress/.temp/
+docs/.vuepress/.cache/
+docs/.vuepress/components/
+docs/.vuepress/*
+ByteDanceVerify.html
+google053c90e5a7354c40.html
+sogousiteverification.txt
