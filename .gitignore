@@ -6,6 +6,9 @@ web/
 .idea/
 *.sh
 *.py
+package.json
+package-lock.json
+bash
 docs/.vuepress/.temp/
 docs/.vuepress/.cache/
 docs/.vuepress/components/
