@@ -4,7 +4,7 @@ node_modules/
 *.bat
 web/
 .idea/
-#*.sh
+*.sh
 *.py
 docs/.vuepress/.temp/
 docs/.vuepress/.cache/
