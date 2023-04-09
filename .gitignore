@@ -4,8 +4,7 @@ node_modules/
 *.bat
 web/
 .idea/
-./deploy.sh
-./web-deploy.sh
+#*.sh
 *.py
 docs/.vuepress/.temp/
 docs/.vuepress/.cache/
