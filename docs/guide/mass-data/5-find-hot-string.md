@@ -1,8 +1,7 @@
 ---
-sidebar: heading
+icon: creative
+title: 如何查询最热门的查询串？
 ---
-
-# 如何查询最热门的查询串？
 
 ## 题目描述
 

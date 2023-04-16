@@ -1,8 +1,7 @@
 ---
-sidebar: heading
+icon: creative
+title: 查找两个大文件共同的URL
 ---
-
-# 查找两个大文件共同的URL
 
 ## 题目
 

@@ -16,8 +16,8 @@ features:
   - title: 合集《面试实录》
     icon: computer
     details: 助力你的大厂offer梦
-    link: /guide/memoir/1
-  - title: 基于人工智能的智慧校园助手
+    link: /guide/memoir/readme.md
+  - title: 《基于人工智能的智慧校园助手》
     icon: note
     details: 集人脸识别、校园地图、商城服务、人工智能机器人问答
     link: /
