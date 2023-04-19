@@ -1,5 +1,4 @@
 ---
-layout: post
 title: 面试速成
 category: 学习路线
 icon: "xitongsheji"

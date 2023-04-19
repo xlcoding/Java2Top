@@ -1,16 +1,5 @@
 ---
 icon: creative
-title: BAT面经合集
+title: 基于人工智能的智慧校园助手
 ---
-1、hashmap底层原理（数据结构、为什么用红黑树等）
-
-2、Jvm内存模型
-
-3、索引的数据结构对比（hash、B树与B+树），为什么不用红黑树
-
-4、Mysql的默认隔离级别、不同等级隔离级别解决的问题与实现原理
-
-5、Java线程池核心参数与工作流程，拒绝策略
-
-6、Tcp与Udp区别
-
+![img](https://xiaolongcoder.oss-cn-beijing.aliyuncs.com/imgs/Java2Top/java/k202304182303253.jpg)
