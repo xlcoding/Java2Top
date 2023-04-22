@@ -16,42 +16,48 @@ head:
 
 面向对象：实现对象是谁，只关心怎样使用，不关心具体实现（**只关心实现对象是谁，有封装、继承、多态三大特性**）
 
-**封装：**可以不用关心内部实现，具体构造，只需知道怎么操作它就是，比如电视，手机，将内部封装起来，直接使用
+**封装**：可以不用关心内部实现，具体构造，只需知道怎么操作它就是，比如电视，手机，将内部封装起来，直接使用
 
-**多态：**
+**多态**：同一个方法调用，由于对象不同可能会有不同的行为。
 
-同一个方法调用，由于对象不同可能会有不同的行为。比如都是休息，张三是睡觉，李四是爬山等；或则具体场景中，我不知道现在具体传进来的对象是student,还是teacher，那么可以用pepole去接收它。
+> 比如都是休息，张三是睡觉，李四是爬山等；或则具体场景中，我不知道现在具体传进来的对象是 `Student`,还是 `Teacher`，那么可以用 `Pepole` 去接收它。
 
-**多态的存在要有3个必要条件：**继承，方法重写，父类引用指向子类对象。3. 父类引用指向子类对象后，用该父类引用调用子类重写的方法，此时多态就出现了
+**多态的存在要有3个必要条件**：继承，方法重写，父类引用指向子类对象。3. 父类引用指向子类对象后，用该父类引用调用子类重写的方法，此时多态就出现了
 
-**继承：**使代码更容易扩展，比如有学生教师，他们都有一些公用方法与属性，可以将其抽取出来定义为父类，再去继承它，**复用代码，减少冗余，易于扩展**
-
-
-
-面向对象是一种编程思想，早期的面向过程的思想就是一件事该怎么做，而面向对象就是一件事该由谁来做，它怎么做的我不管，我只需要调用就行。而这些是由面向对象的三大特性来实现的，三大特性就是封装、继承、多态。封装就是将一类属性和行为抽象成一个类，使其属性私有化，行为公开化，提高属性的安全性的同时，也可以使代码模块化，这样做使代码的复用性更高。继承就是将几个类共有的属性和行为抽象成一个父类，每个子类都有父类的属性和行为，也有自己的属性和行为，这样做，扩展了已存在的代码，进一步提高的代码的复用性，但是继承是耦合度很高的一种关系，父类代码修改，子类行为也会改变，如果过度使用继承会起到反效果。多态必须要有继承和重写，并且父类/接口引用指向子类/实现类对象，很多的设计模式都是基于面向对象中多态性设计的。
+**继承**：使代码更容易扩展，比如有学生教师，他们都有一些公用方法与属性，可以将其抽取出来定义为父类，再去继承它，**复用代码，减少冗余，易于扩展**
 
 ### 2、面向对象与面向过程区别
 
 - **面向过程** ：**面向过程性能比面向对象高。** 因为类调用时需要实例化，开销比较大，比较消耗资源，所以当性能是最重要的考量因素的时候，比如单片机、嵌入式开发、Linux/Unix 等一般采用面向过程开发。但是，**面向过程没有面向对象易维护、易复用、易扩展。**
 - **面向对象** ：**面向对象易维护、易复用、易扩展。** 因为面向对象有封装、继承、多态性的特性，所以可以设计出低耦合的系统，使系统更加灵活、更加易于维护。但是，**面向对象性能比面向过程低**。
 
-### 3、JDK与JRE区别
+### 3、JDK 与 JRE 区别
 
-JDK(java developer's kit): 
+`简单总结`：
 
-​		JDK=JRE+开发工具集(java javac javadoc jar....)
+**JDK（Java Developer's Kit）**
 
-JRE(java runtime environment)---java运行环境：
+JDK = JRE + 开发工具集（java javac javadoc jar....）
 
-​		JRE=JVM+核心类库
+**JRE（Java Runtime Environment)** java运行环境
+
+JRE = JVM + 核心类库
 
 **只运行，JRE即可，要编译就要JDK**
 
+![image-20230419230213841](https://xiaolongcoder.oss-cn-beijing.aliyuncs.com/imgs/Java2Top/java/k202304192302967.png)
+
 ### 4、值传递与引用传递
+
+Java 语言是**值传递**。Java 语言的方法调用只支持参数的值传递。当一个对象实例作为一个参数被传递到方法中时，参数的值就是对该对象的引用。对象的属性可以在被调用过程中被改变，但对对象引用的改变是不会影响到调用者的。
+
+JVM 的内存分为堆和栈，其中栈中存储了基本数据类型和引用数据类型实例的地址，也就是对象地址。
+
+而对象所占的空间是在堆中开辟的，所以传递的时候可以理解为把变量存储的对象地址给传递过去，因此引用类型也是值传递。
 
 ### 5、==与equals()区别
 
-=比较的是地址。对于基本数据类型比较的值，对于引用数据类型比较的是内存地址
+= 比较的是地址。对于基本数据类型比较的值，对于引用数据类型比较的是内存地址
 
 equals() 属于object类方法，没有重写之前使用效果和==一样。可以重写例如String类，使其比较内容值是否相等
 
@@ -108,7 +114,7 @@ equals相同，hashcode相同；hashcode不同，equals一定不同；hashcode�
 
 ### 14、关于String的理解
 
-![img](https://cdn.nlark.com/yuque/0/2021/png/21967782/1626509465265-dfb56d3b-8615-4b69-a6ee-2e4be8e764df.png?x-oss-process=image%2Fwatermark%2Ctype_d3F5LW1pY3JvaGVp%2Csize_22%2Ctext_5b6u5L-h5YWs5LyX5Y-377ya5bCP6b6ZY29kaW5n%2Ccolor_FFFFFF%2Cshadow_50%2Ct_80%2Cg_se%2Cx_10%2Cy_10)
+![image-20230419230633023](https://xiaolongcoder.oss-cn-beijing.aliyuncs.com/imgs/Java2Top/java/k202304192306154.png)
 
 ```java
 String str1 = new String("123");//再常量池创一个“123”对象，遇到new在堆内存创建一个对象，并返回堆中的对象引用
@@ -136,164 +142,11 @@ System.out.println((str4 == str5) +","+ (str6 == str7));
 
  float f=1.1f；对
 
+short s=1；s+=1;
 
+s=s+1；错
 
-short s=1;           s+=1;
-	s=s+1;错            s++; （隐式类型转换 相当于 s = (short) (s + 1);）
-
-### 17、Java集合机制与使用场景
-
-```java
-1) Collection
-一组"对立"的元素，通常这些元素都服从某种规则
- 　　1.1) List必须保持元素特定的顺序 (有序、可重复、查找效率高、插入删除低、下标遍历)
-   		1.1.1) ArrayList
-        1.1.2) Vector
-        1.1.3) LinkedList
- 　　1.2) Set不能有重复元素(无序、不可重复、查询效率低)
-   		1.2.1) HashSet(为快速查找设计，)
-        	1.2.1.1) LinkedHashSet
-        1.2.2) SortSet
-        	1.2.2.1) TreeSet(使得有序)
- 　　1.3) Queue保持一个队列(先进先出)的顺序
-   		1.3.1) PriorityQueue(模拟堆，按照元素顺序排序)
-    	1.3.2) Deque
-2) Map
-一组成对的"键值对"对象
-	2.1) HashMap
-    2.2) HashSet
-    2.3) SortedMap
-    	2.3.1) TreeMap(基于红黑树排序 O(logn))
-    2.4) ....
-```
-
-### 18、set与list区别？
-
-1、List,Set都是继承自Collection接口
-
-2、List特点：元素有放入顺序，元素可重复 ，Set特点：元素无放入顺序，元素不可重复，重复元素会覆盖掉，（元素虽然无放入顺序，但是元素在set中的位置是有该元素的HashCode决定的，其位置其实是固定的，加入Set 的Object必须定义equals()方法 ，另外list支持for循环，也就是通过下标来遍历，也可以用迭代器，但是set只能用迭代，因为他无序，无法用下标来取得想要的值。） 
-
-3.Set和List对比： 
-
-Set：检索元素效率低下，删除和插入效率高，插入和删除不会引起元素位置改变。 
-
-List：和数组类似，List可以动态增长，查找元素效率高，插入删除元素效率低，因为会引起其他元素位置改变。 
-
-### 19、ArrayList扩容机制
-
-- 添加元素时使用 ensureCapacityInternal() 方法来保证容量足够，如果不够时，需要使用 grow() 方法进行扩容
-- 新容量的大小为 oldCapacity + (oldCapacity >> 1)，即 oldCapacity+oldCapacity/2。其中 oldCapacity >> 1 需要取整，所以新容量大约是旧容量的 1.5 倍左右。（oldCapacity 为偶数就是 1.5 倍，为奇数就是 1.5 倍-0.5）
-- 扩容操作需要调用 Arrays.copyOf() 把原数组整个复制到新数组中，这个操作代价很高，因此最好在创建 ArrayList 对象时就指定大概的容量大小，减少扩容操作的次数。
-- modCount记录结构修改次数
-
-### 20、ArrayList 与 Vector 区别呢?为什么要⽤Arraylist取代Vector呢
-
-**实现：**都实现List接口，底层采用Object[] elementData数组，
-
-**线程安全**：Vector 使用了 Synchronized 来实现线程同步，是线程安全的，而 ArrayList 是非线程安全的。
-
-**性能**：ArrayList 在性能方面要优于 Vector。
-
-**扩容**：ArrayList 和 Vector 都会根据实际的需要动态的调整容量，只不过在 Vector 扩容每次变2倍，而 ArrayList 变1.5倍
-
-**长度**：ArrayList默认初始长度10
-
-### 21、ArrayList和LinkedList的区别
-
-**ArrayList与LinkedList都实现List接口**：arrayList实现了 **RandomAccess**接口，代表支持随机访问
-
-**线程安全问题**：ArrayList与LinkedList都是线程不同步的，也就是都不保证线程安全。
-
-**底层数据结构**：ArrayLis底层使用数组，**默认初始大小为10**；插入元素超出则会动态扩容为原来1.5倍;LinkedList底层采用**双向链表数据结构**（注意：JDK1.6之前为循环链表，JDK1.7取消了循环）。
-
-**插入删除**：ArrayList：若增加至末尾，O(1)；若在指定位置i插入O(n-i)。LinkedList：插入删除都是近似O(1),而数组为近似 O（n）
-
-**查询**：数组支持随机快速访问，而链表需要依次遍历，更耗时。
-
-**占用内存空间大小**：一般LinkedList占空间更大，双向列表每个结点要维护两个指针。但是若ArrayList刚到扩容阈值，扩容后会浪费很多空间。
-
-**数组查找原理：**数组空间连续，查询通过偏移量找，LinkList底层链表，逻辑连续，空间不连续，指针访问
-
-### 22、HashMap 和 Hashtable 的区别
-
-- 线程安全：Hashtable方法sychonized修饰，线程安全
-- 效率方面：由于Hashtable方法被sychonized修饰，效率比HashMap低
-- 底层数据结构：HashMap jdk8当链表长度>=8并且数组长度>=64链表会转红黑树，Hashtable没有这样机制
-- 初始容量与扩容：默认初始量：Hashtable为11，HashMap为16；若指定初始量：Hashtable用指定的值，HashMap会扩充为 2 的幂次⽅⼤⼩。扩容：Hashtable容量变为原来2n+1倍，HashMap变为2倍。
-- 对Null key与Null value支持：HashMap支持一个Null key多个Null value，Hashtable不支持Null key，否则报错空指针异常
-
-### 23、HashSet怎样检查重复
-
-对HashMap封装了一层，很多方法还是直接用的map的
-
-通过计算对象的hashcode定位，同时比较与其他对象hashcode是否相等，若没有相符的则假设没有重复对象；若有相同的则equlas判断
-
-### 24、HashMap与HashSet区别
-
-HashSet 底层就是基于 HashMap 实现的（除了个别方法自己实现，其他调用hashmap的）。HashMap使用键(Key)计算hashcode，HashSet使用成员对象来计算hashcode值。
-
-### 25、HashMap jdk8与jdk7区别
-
-- JDK8中新增了红黑树，JDK8是通过数组+链表+红黑树来实现的
-- JDK7中链表的插入是用的头插法，而JDK8中则改为了尾插法
-
-- - **因为JDK1.7是用单链表进行的纵向延伸，当采用头插法时会容易出现逆序且环形链表死循环问题。但是在JDK1.8之后是因为加入了红黑树使用尾插法，能够避免出现逆序且链表死循环的问题。**
-
-- JDK8中的因为使用了红黑树保证了插入和查询了效率，所以实际上JDK8中 的Hash算法实现的复杂度降低了
-- JDK7中是先扩容再添加新元素，JDK8中是先添加新元素然后再扩容 
-- JDK8中数组扩容的条件也发了变化，只会判断是否当前元素个数是否超过了阈值，而不再判断当前put进来的元素对应的数组下标位置是否有值。 
-
-### 26、HashMap 的⻓度为什么是2的幂次⽅
-
-注意：&与 两个为1才为1   ^异或 相同则为0，不相同则为1
-
-因为当容量为2的幂时，h&(length-1)运算才等价于length取模，也就是h%length，而&比%具有更高的效率，也就是计算机会计算的更快。
-
-而且这样能尽量均匀分布减少哈希冲突：
-
-2的n次方实际就是1后面n个0，2的n次方-1实际就是n个1。这样按位“与”时，每一位都能&1，真正参与了运算，分布更均匀。
-
-### 27、为什么要把key的哈希码右移16位呢
-
-因为h的int类型正好32位，为了使计算出的hash值更加的分散，所以选择先将h无符号右移16位，然后再与h异或时，就能达到h的高16位和低16位都能参与计算，尽最大努力减少哈希冲突
-
-### 28、HashMap如何确定元素放在哪个位置呢
-
-- 经过扰动函数计算得到hash值（先计算出key的hashcode，再计算h^(h>>>16））---减少hash碰撞
-- 通过 **(n - 1) & hash** 判断当前元素存放的位置
-
-### 29、hashmap的put方法流程
-
-**HashMap** 通过**key** 的 **hashCode** 经过扰动函数处理过后得到 **hash** 值，然后通过 **(n - 1) & hash** 判断当前元素存放的位置（这⾥的 **n** 指的是数组的⻓度），如果当前位置存在元素的话，就判断该元素与要存⼊的元素的 **hash** 值以及 **key** 是否相同，如果相同的话，直接覆盖，不相同就通过拉链法解决冲突。
-
-- 执行put方法会执行putval方法，执行putval前先计算hash值
-- 经过扰动函数使其hash值更散列（调用key对象的hashcode方法计算出来hash值，将 Hash 值的高 16 位右移并与原 Hash 值取异或运算（^），混合高 16 位和低 16 位的值，得到一个更加散列的低 16 位的 Hash 值）
-- 然后进入putval方法，会判断是否第一次调用put，若是第一次才初始化数组长度16，
-- 然后会判断数组该位置是否为空，若空创建结点插入，不为空若插入元素与桶中元素key一样，后面会替换。若不为空且插入元素与桶中元素key不一样，则向后添加元素。
-
-- - jdk7,头插法
-  - jdk8尾插法，遍历链表，若有相同的node,替换。否则尾插，然后再判断是否树化（链表长度>=8 进入treeifyBin(tab, hash);进入该方法还需要判断当前数组长度>=64才能树化,如果<64则扩容）
-
-- ++modCount
-- size++
-
-### 30、HashMap并发线程安全问题？
-
-1、在JDK1.7中，当并发执行扩容操作会造成环形链，然后调用get方法会死循环
-
-2、JDK1.8中，并发执行put操作时会发生**数据覆盖**的操作。
-
-### 31、hashmap扩容流程？
-
-**扩容时多线程操作可能会导致链表成环的出现，然后调⽤get⽅法会死循环**
-
-触发时机：1、未初始化，第一次put时；2、大于扩容阈值。
-
-流程：新建2倍大小的数组，根据新数组长度对其值重新hash，寻址。具体会将原来数组链表拆为高低位链表，低位链表存放扩容后数组下标没变的结点，高位链表存放变了的，然后将高低位链表插入新数组
-
-### 32、TreeMap
-
-TreeMap是基于**红黑树**的一种**提供顺序访问**的Map，操作的时间复杂度都是**O(logn)**;默认按键的升序排序，具体顺序可有指定的comparator决定。TreeMap键、值都不能为null；hashtable也不能为null
+s++; （隐式类型转换 相当于 s = (short) (s + 1);）
 
 ### 33、反射原理
 
@@ -316,6 +169,8 @@ TreeMap是基于**红黑树**的一种**提供顺序访问**的Map，操作的�
 - - 2、JDK动态代理
   - 3、jdbc通过Class.forName()加载数据的驱动程序
   - 4、Spring解析xml装配Bean
+
+![Java反射相关类](https://xiaolongcoder.oss-cn-beijing.aliyuncs.com/imgs/Java2Top/java/k202304192304283.png)
 
 ### 34、object的方法有哪些？notify和notifyAll的区别？
 
@@ -416,90 +271,3 @@ class文件常量池
 
 ### 44、动态链接与静态链接
 
-
-
-#### 3、方法引用
-
-#### 4、Stream API
-
-Stream流
-
-filter（过滤）、sort（排序）、map（对给个对象映射）、limit(获取指定数量的流)
-
-```java
-List<Integer> numbers = Arrays.asList(3, 2, 2, 3, 7, 3, 5);
-numbers.stream().filter(t -> t % 2 == 0).map(t -> String.valueOf(t)+"*").collect(Collectors.toList()).forEach(System.out::println);
-IntSummaryStatistics stats = numbers.stream().mapToInt((x) -> x).summaryStatistics();
-```
-
-#### 5、Date Time API 
-
-j**dk7非线程安全**+设计很差(util.Date sql.Date，Date年1900开始，月0-11，)+时区处理麻烦
-
-Java 8引入了新的日期和时间API，它们是不变类，默认按ISO 8601标准格式化和解析；
-
-使用LocalDateTime可以非常方便地对日期和时间进行加减，或者调整日期和时间，它总是返回新对象；
-
-使用isBefore()和isAfter()可以判断日期和时间的先后；
-
-使用Duration和Period可以表示两个日期和时间的“区间间隔”。
-
-从Java 8开始，java.time包提供了新的日期和时间API，主要涉及的类型有：
-
-本地日期和时间：LocalDateTime，LocalDate，LocalTime；
-
-带时区的日期和时间：ZonedDateTime；
-
-时刻：Instant；
-
-时区：ZoneId，ZoneOffset；
-
-时间间隔：Duration。
-
-以及一套新的用于取代SimpleDateFormat的格式化类型DateTimeFormatter。
-
-和旧的API相比，新API严格区分了时刻、本地日期、本地时间和带时区的日期时间，并且，对日期和时间进行运算更加方便。
-
-**此外，新API修正了旧API不合理的常量设计：**
-
-#### 6、Optional 类
-
-Java8新特性：
-
-Optional
-
-
-
-如果为非空，返回 Optional 描述的指定值，否则返回空的 Optional。
-
-可以保存类型T的值，或者仅仅保存null，**很好的解决空指针异常**，减少空值判断代码，可读性降低
-
-以前：
-
-```java
-public String getCity(User user)  throws Exception{
-        if(user!=null){
-            if(user.getAddress()!=null){
-                Address address = user.getAddress();
-                if(address.getCity()!=null){
-                    return address.getCity();
-                }
-            }
-        }
-        throw new Excpetion("取值错误");  
-    }
-```
-
-Java8：
-
-```java
-public String getCity(User user) throws Exception{
-    return Optional.ofNullable(user)
-                   .map(u-> u.getAddress())
-                   .map(a->a.getCity())
-                   .orElseThrow(()->new Exception("取指错误"));
-}
-
-//如上所示，如果user的name的长度是小于6的，则返回。如果是大于6的，则返回一个EMPTY对象。
-Optional<User> user1 = Optional.ofNullable(user).filter(u -> u.getName().length()<6);
-```
