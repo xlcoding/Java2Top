@@ -49,7 +49,9 @@ JRE = JVM + 核心类库
 
 ### 4、值传递与引用传递
 
-Java 语言是**值传递**。Java 语言的方法调用只支持参数的值传递。当一个对象实例作为一个参数被传递到方法中时，参数的值就是对该对象的引用。对象的属性可以在被调用过程中被改变，但对对象引用的改变是不会影响到调用者的。
+Java 语言是 **值传递**。Java 语言的方法调用只支持参数的值传递。
+
+当一个对象实例作为一个参数被传递到方法中时，参数的值就是对该对象的引用。对象的属性可以在被调用过程中被改变，但对对象引用的改变是不会影响到调用者的。
 
 JVM 的内存分为堆和栈，其中栈中存储了基本数据类型和引用数据类型实例的地址，也就是对象地址。
 
@@ -57,20 +59,38 @@ JVM 的内存分为堆和栈，其中栈中存储了基本数据类型和引用�
 
 ### 5、==与equals()区别
 
-= 比较的是地址。对于基本数据类型比较的值，对于引用数据类型比较的是内存地址
+`==` 比较的是地址。对于基本数据类型比较的值，对于引用数据类型比较的是内存地址
 
-equals() 属于object类方法，没有重写之前使用效果和==一样。可以重写例如String类，使其比较内容值是否相等
+`equals()`  属于 object 类方法，没有重写之前使用效果和 `==` 一样。可以重写例如 `String` 类，使其比较内容值是否相等
 
 ### 6、为什么重写 equals 时必须重写 hashCode ⽅法
 
-hashcode可以获取哈希码，确定该对象在哈希表中的索引位置
+`hashcode` 可以获取哈希码，确定该对象在哈希表中的索引位置
 
-- **提高效率**：使用hashcode提前检验，定位，不用每一次都使用equlas方法比较，提高效率
-- **保证没有重复对象出现，确保hashmap去重性**：假如只重写equas方法，不重写hashcode，相同的对象hashCode不同，从而映射到不同下标下，HashMap无法保证去重
+- **提高效率**：使用 hashcode 提前检验，定位，不用每一次都使用 equlas 方法比较，提高效率
+- **保证没有重复对象出现，确保hashmap去重性**：假如只重写 equas 方法，不重写 hashcode，相同的对象 hashCode 不同，从而映射到不同下标下，HashMap 无法保证去重
 
-equals相同，hashcode相同；hashcode不同，equals一定不同；hashcode相同，equals不一定相同(哈希冲突)
+equals 相同，hashcode 相同；hashcode 不同，equals 一定不同；hashcode 相同，equals 不一定相同(哈希冲突)
 
 ### 7、深拷贝与浅拷贝
+
+- **浅拷贝**：仅拷贝被拷贝对象的成员变量的值，也就是基本数据类型变量的值，和引用数据类型变量的地址值，而对于引用类型变量指向的堆中的对象不会拷贝。（拷贝值与引用）
+- **深拷贝**：完全拷贝一个对象，拷贝被拷贝对象的成员变量的值，堆中的对象也会拷贝一份。（拷贝整个对象）
+
+例如现在有一个 Student对象，里面有一个 teachers 列表，它的浅拷贝和深拷贝的示意图：
+
+![image-20230422172644974](https://xiaolongcoder.oss-cn-beijing.aliyuncs.com/imgs/Java2Top/java/k202304221726699.png)
+
+因此深拷贝是安全的，浅拷贝的话如果有引用类型，那么拷贝后对象，引用类型变量修改，会影响原对象。
+
+> 浅拷贝如何实现呢？
+
+Object 类提供的 `clone()` 方法可以非常简单地实现对象的浅拷贝。
+
+> 深拷贝如何实现呢？
+
+- **重写克隆方法**：重写克隆方法，引用类型变量单独克隆，这里可能会涉及多层递归。
+- **序列化**：可以先将原对象序列化，再反序列化成拷贝对象。
 
 ### 8、Student s = new Student();在内存中做了哪些事情
 
@@ -98,7 +118,7 @@ equals相同，hashcode相同；hashcode不同，equals一定不同；hashcode�
 
 ### 11、String为何不可变不可变好处
 
-**String 类中使⽤ final 关键字修饰字符数组来保存字符串**，jdk9后，使用byte数组。StringBuilder 与 StringBuffer 都继承⾃ AbstractStringBuilder 类，在 AbstractStringBuilder 中也是使⽤字符数组保存字符串char[]value 但是没有⽤ final 关键字修饰，所以这两种对象都是可变的。
+**String 类中使⽤ final 关键字修饰字符数组来保存字符串**，jdk9后，使用 byte 数组。StringBuilder 与 StringBuffer 都继承⾃ `AbstractStringBuilder` 类，在 `AbstractStringBuilder` 中也是使⽤字符数组保存字符串 `char[]value` 但是没有⽤ final 关键字修饰，所以这两种对象都是可变的。
 
 **不可变好处**：缓存hash值(使得hash值不变，只进行一次计算)、String pool需要、线程安全、参数安全性（网络连接，参数变了，以为连接主机变了）
 
@@ -114,10 +134,10 @@ equals相同，hashcode相同；hashcode不同，equals一定不同；hashcode�
 
 ### 14、关于String的理解
 
-![image-20230419230633023](https://xiaolongcoder.oss-cn-beijing.aliyuncs.com/imgs/Java2Top/java/k202304192306154.png)
+![image-20230422182129223](https://xiaolongcoder.oss-cn-beijing.aliyuncs.com/imgs/Java2Top/java/k202304221822998.png)
 
 ```java
-String str1 = new String("123");//再常量池创一个“123”对象，遇到new在堆内存创建一个对象，并返回堆中的对象引用
+String str1 = new String("123");//在常量池创一个“123”对象，遇到new在堆内存创建一个对象，并返回堆中的对象引用
 String str2 = "123";//因为之前常量池中能找到“123”的对象，所以直接将引用返回，不创建新的
 String str3 = str1.intern();//若常量池中包含了str1字符串“123”,则直接返回引用，否则就在池中先创建一个在返回池中的对象引用
 System.out.println((str1 == str2) +","+ (str3 == str2))
@@ -132,21 +152,29 @@ System.out.println((str4 == str5) +","+ (str6 == str7));
 
 ### 15、8种基本数据类型与占内存大小
 
-**byte**(1字节 -2的7次方到2的7次方-1)、**short**(2字节 -2的15次方到2的15次方-1)、**int**(4字节)、**float**(4)、**double**(8)、**long**(8字节)，**char**(2)、booean(4-内存对齐)，
+- **byte** (1字节， -2的7次方到2的7次方-1)
+- **short**(2字节， -2的15次方到2的15次方-1)
+- **int**(4字节)
+- **float**(4字节)
+- **double**(8字节)
+- **long**(8字节)
+- **char**(2)
+- **booean**(4—内存对齐)，
 
-逻辑上boolean型只占1bit，但是虚拟机底层对boolean值进行操作实际使用的是int型，操作boolean数组则使用byte型；
+逻辑上 boolean 型只占1bit，但是虚拟机底层对 boolean 值进行操作实际使用的是 int 型，操作 boolean 数组则使用 byte 型；
 
 ### 16、float 与 double/short与int
 
- float f = 1.1；错    
+> 被好多次大厂考过
 
- float f=1.1f；对
+-  float f = 1.1；错    
 
-short s=1；s+=1;
+-  float f = 1.1f；对
 
-s=s+1；错
+- short s = 1；
+- s += 1；s = s+1；错（被强转成了 int ）
+- s++;  对（隐式类型转换 相当于 s = (short) (s + 1);）
 
-s++; （隐式类型转换 相当于 s = (short) (s + 1);）
 
 ### 33、反射原理
 
@@ -174,39 +202,73 @@ s++; （隐式类型转换 相当于 s = (short) (s + 1);）
 
 ### 34、object的方法有哪些？notify和notifyAll的区别？
 
-1、getClass--final方法，获得运行时类型。
+1、`getClass`--final方法，获得运行时类型。
 
-2、toString——对象的字符串表示形式（对象所属类的名称+@+转换为十六进制的对象的哈希值组成的字符串 ）
+2、`toString`——对象的字符串表示形式（**对象所属类的名称+@+转换为十六进制的对象的哈希值组成的字符串** ）
 
-3、equas方法——如果没有重写用的就是Object里的方法，和==一样都是比较两个引用地址是否相等，或则基本数据类型值是否相等
+3、`equas` 方法——如果没有重写用的就是 Object 里的方法，和==一样都是比较两个引用地址是否相等，或则基本数据类型值是否相等
 
-4、Clone方法——保护方法，实现对象的浅复制，只有实现了Cloneable接口才可以调用该方法，否则抛出CloneNotSupportedException异常。
+4、`Clone`  方法——保护方法，实现对象的浅复制，只有实现了 Cloneable 接口才可以调用该方法，否则抛出CloneNotSupportedException 异常。
 
-5、notify方法——唤醒在该对象上等待的某个线程
+5、`notify` 方法——唤醒在该对象上等待的某个线程
 
-6、notifyAll方法——唤醒在该对象上等待的所有线程
+6、`notifyAll` 方法——唤醒在该对象上等待的所有线程
 
-7、Wait方法——wait()的作用是让当前线程进入等待状态，同时，wait()也会让当前线程释放它所持有的锁，直到其他线程调用此对象的 notify() 方法或 notifyAll() 方法”，当前线程被唤醒(进入“就绪状态”)。还有一个wait(long timeout)超时时间-补充sleep不会释放锁
+7、`Wait` 方法——wait() 的作用是让当前线程进入等待状态。同时，**wait()** 也会让当前线程释放它所持有的锁，直到其他线程调用此对象的 notify() 方法或 notifyAll() 方法，当前线程被唤醒(进入 "就绪状态")。还有一个 **wait(long timeout)** 超时时间
 
-8、Finalize()方法——可以用于对象的自我拯救
+> 补充 sleep不会释放锁
 
-9、Hashcode方法——该方法用于哈希查找，可以减少在查找中使用equals的次数，重写了equals方法一般都要重写hashCode方法。这个方法在一些具有哈希功能的Collection中用到。
+8、`Finalize()` 方法——可以用于对象的自我拯救
 
-一般必须满足obj1.equals(obj2)==true。可以推出obj1.hash- Code()==obj2.hashCode()，但是hashCode相等不一定就满足equals。不过为了提高效率，应该尽量使上面两个条件接近等价
+9、`Hashcode` 方法——该方法用于哈希查找，可以减少在查找中使用equals的次数，重写了equals方法一般都要重写hashCode方法。这个方法在一些具有哈希功能的Collection中用到。
+
+一般必须满足 obj1.equals(obj2)==true。可以推出 obj1.hashCode()==obj2.hashCode()，但是 `hashCode` 相等不一定就满足equals。**不过为了提高效率，应该尽量使上面两个条件接近等价**
 
 ### 35、Java中接口和抽象类的区别？
 
-- 方法：接口只有定义，**不能有方法的实现**，java 1.8中可以定义default与static方法体，而抽象类可以有定义与实现，方法可在抽象类中实现。
-- 成员变量：接口成员变量只能是public static final的，且必须初始化，抽象类可以和普通类一样任意类型。
-- 继承实现：一个类只能继承一个抽象类(extends)，可以实现多个接口（implements)
+- **方法**：接口只有定义，**不能有方法的实现**，java 1.8中可以定义default与static方法体，而抽象类可以有定义与实现，方法可在抽象类中实现。
+- **成员变量**：接口成员变量只能是public static final的，且必须初始化，抽象类可以和普通类一样任意类型。
+- **继承实现**：一个类只能继承一个抽象类(extends)，可以实现多个接口（implements)
 - 都不能实例化
 - 接口不能有构造函数，抽象类可以有
+
+**总结⼀下 JDK7~JDK9 Java 中接⼝的变化**：
+
+1. 在 JDK 7 或更早版本中，接⼝⾥⾯只能有常量变量和抽象⽅法。这些接⼝⽅法必须由选择实现接⼝的类实现。
+2. JDK 8 的时候接⼝可以有默认⽅法和静态⽅法功能。
+3. JDK 9 在接⼝中引⼊了私有⽅法和私有静态⽅法。
+
+### 24.final 关键字有什么作用？
+
+`final` 表示不可变的意思，可用于**修饰类**、**属性**和**方法**：
+
+- 被 final 修饰的类不可以被继承
+
+- 被 final 修饰的方法不可以被重写
+
+- 被 final 修饰的变量不可变，被 final 修饰的变量必须被显式第指定初始值，还得注意的是，这里的不可变指的是变量的引用不可变，不是引用指向的内容的不可变。
+
+  例如：
+
+```java
+final StringBuilder sb = new StringBuilder("abc");
+sb.append("d");
+System.out.println(sb);  //abcd
+```
 
 ### 36、既然有了字节流,为什么还要有字符流
 
  Java 虚拟机转字节得到字符流，耗时；不知道编码类型还很容易出现乱码。所以干脆提供字符流。
 
-### 37、throw与throws区别
+### 45.什么是序列化？什么是反序列化？
+
+什么是序列化，序列化就是**把 Java 对象转为二进制流**，方便存储和传输。
+
+所以**反序列化就是把二进制流恢复成对象**。
+
+![image-20230422183426425](https://xiaolongcoder.oss-cn-beijing.aliyuncs.com/imgs/Java2Top/java/k202304221834497.png)
+
+### 37、throw 与 throws区别
 
 throw 关键字用在**方法内部**，只能用于**抛出一种异常**；throws 关键字用在**方法声明**上，可以抛出多个异常，用来**标识该方法可能抛出的异常列表**
 
@@ -214,9 +276,9 @@ throw 关键字用在**方法内部**，只能用于**抛出一种异常**；thr
 
 二叉查找树（二叉排序，二叉搜索树），相当于二分查找，但是可能出现线性化，相当于o(n)，于是出现了红黑树，它是自平衡的二叉搜索树，有红黑两种结点，根节点红色，叶子节点是为空的黑色结点，红黑交替，从任意结点出发到达它可达的叶子结点路径所包含的黑色结点一样，增删查时间复杂度**O(logn)**.通过变色与旋转维持平衡。左旋：逆时针旋转，让父节点右孩子当父亲；右旋：顺时针旋转，让父节点左孩子当父亲。
 
-### 39、JDK与cjlib动态代理
+### 39、JDK与 cjlib 动态代理
 
-动态代理好处：
+**动态代理好处**：
 
 一个工程如果依赖另一个工程给的接口，但是另一个工程的接口不稳定，经常变更协议，就可以使用一个代理，接口变更时，只需要修改代理，不需要一一修改业务代码
 

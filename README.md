@@ -2,11 +2,7 @@
 
 # Java2Top |「Java学习+校招求职面试+大厂学习导航」
 
-
-
 ## 📖在线阅读网址👉：[www.java2top.cn](http://www.java2top.cn/)
-
-
 
 ## 👁‍🗨Java2Top介绍
 
@@ -19,7 +15,7 @@
 你可以把这份指南整体架构想象成一本功法，不同模块根据学习者层次而设定。
 
 - 「编程资源」属于**功法库**—— 收录涵盖各个经典 开源项目，编程资源，编程工具；`加餐补给以国外优质网站资源为主`。
-- 「大厂导航」旨在**基础招式**——会带着你`从懵懂无知畅游Java之海而到初有感悟`，有对应书籍、视频、专栏学习指引；
+- 「学习导航」旨在**基础招式**——会带着你`从懵懂无知畅游Java之海而到初有感悟`，有对应书籍、视频、专栏学习指引；
 
 - 「专题进阶」旨在**内功夯实**——会带着你 进一步夯实基础，根据大厂面试常考重点难点设置对应专题，大部分对应着大厂面试题；
 
@@ -28,36 +24,44 @@
 - 「校招求职」属于**功法斗技**，建议面试求职前一定认真阅读，对面试求职必定事半功倍。
 - 「aurora」属于**万人练级**，后期我会准备一个 「**全民项目**」，从 `提需求->开发->提 PR ->merge` ,把大家召集起来一起开发，项目会`将当下大厂常问的各种热门技术点尽可能融入`，大家互相讨论进步。最后此项目可以 作为软件竞赛，校招求职项目。
 
-其中不乏各种精品专栏，大厂高频面试题：**Java基础, 多线程, JVM, 虚拟机, 数据库, MySQL, Spring, Redis, MyBatis, 系统设计, 分布式, RPC, 高可用, 高并发 **等各块知识。
+其中不乏各种精品专栏，大厂高频面试题：**Java基础, 多线程, JVM, 虚拟机, 数据库, MySQL, Spring, Redis, MyBatis, 系统设计, 分布式, RPC, 高可用, 高并发** 等各块知识。
 
 ## 👨‍💻关于作者
 
 小龙二本出身，一路自学 Java，校招斩获腾讯、美团、网易SP、ViVo提前批、讯飞多个大厂offer。作为一名后端 coder，深感一路的不易。**希望我的分享可以帮助更多的小伙伴，我踩过的坑你们不要再踩**！
 
-BAT大厂后端开发程序员，分享只是业🧡
-校招面试求职，大厂学习导航~✔🎁
-
-带你学编程，玩编程，👀感谢您的关注🌹。
-**致力打造全网最佳大厂进阶平台~**
-
 [<img src="https://img.shields.io/badge/WhChat-微信交流群-yellowgreen">](https://img.shields.io/badge/WhChat-微信交流群-yellowgreen)[<img src="https://img.shields.io/badge/公众号-小龙coding-brightgreen">](https://mp.weixin.qq.com/s/9HZng1BcsLHnOpPKVBt6IQ)[<img src="https://img.shields.io/badge/知乎-小龙coding-orange">](https://www.zhihu.com/people/jakelong-37)[<img src="https://img.shields.io/badge/在线-计算机经典书籍-blue">](https://mp.weixin.qq.com/s/Co4UCJfPfCsbfwUXQC24Wg)
 
 ## 网站概览 
 
-- [Java 面试指南](./guide/home.md) ：一份涵盖大部分 Java 程序员所需要掌握的核心知识。准备 Java 面试，首选 Java2Top！
-- [Java开源项目精选](./navigation/open-source-projects.md) ：根据当下面试热点，技术潮流持续收集适合用于《校招面试求职》的精品项目，和人手一个的秒杀，商城，管理系统说拜拜吧，您~。
-- [Java书单精选](./navigation/books.md) : **本站会根据当下面试热点，技术潮流持续收集适合用于《校招面试求职》的精品书籍，带你 畅游计算机~**
-- [走进作者](/about-the-author/) : 分享我的个人二本上岸大厂经历。
+「Java 面试指南 （强推）🔥」
+
+- [Java 面试指南](./docs/guide/README.md) ：一份涵盖大部分 Java 程序员所需要掌握的核心知识。准备 Java 面试，首选 Java2Top！
+
+「大厂学习导航」
+
+- [路线规划](./docs/navigation/3-job.md)：带你从进入大学方向选择到逐步学习至校招面试最后作为coder融入职场的整个路线规划~（搬运更新中 🔥）
+- [求职项目精选](././navigation/open-source-projects.md)：根据当下**面试热点，技术潮流**持续收集适合用于《`校招面试求职`》的精品**项目**，和人手一个的秒杀，商城，管理系统说拜拜吧，您~。
+- [Java 书单精选](./docs/navigation/books.md) : 本站会根据当下**面试热点**，技术潮流**持续收集**适合用于《`校招面试求职`》的精品**书籍**，带你 畅游计算机~
+- [经验分享](./docs/navigation/experience.md)：分享我的个人二本上岸大厂经历。校招斩获腾讯、美团、网易SP、ViVo提前批、讯飞多个大厂offer。深感一路的不易。**希望我的分享可以帮助更多的小伙伴，我踩过的坑你们不要再踩**！
+
+「编程资源」 
+
+- ing（火热更新中 🔥）
 
 ## 必看专栏
 
-- **[《BAT 面试笔记》](./notes/BAT.md)** : 与 Java2Top 开源版的内容互补,食之进阶！
-- **[《吃透 Sychronized系列》](./column/concurrent/sychronized/readme.md)** : 从场景到原理，带你彻底理解 Sychronized.
-- **[《MySQL 核心面试系列》](./column/mysql/README.md)** ：带你从架构、内存、事务、锁、日志等方面吃透MySQL BAT面试高频问题。
+- [《面试实录》](./docs/guide/memoir/)：根据秋春招各个**上岸面试录音模拟面试现场**，并整合面试常考知识点，通俗有趣的去讲解 `八股文`，不一样的系列，轻松掌握知识~（火热更新中 🔥）
+- [《吃透 Sychronized系列》（待更）]() : 从场景到原理，带你彻底理解 Sychronized.
+- [《MySQL 核心面试系列》](./docs/guide/java/database/mysql/) ：带你从架构、内存、事务、锁、日志等方面吃透MySQL BAT面试高频问题。
 
 ## 求职项目
 
-- [《基于人工智能的智慧校园助手》](./notes/BAT.md)
+- [《基于人工智能的智慧校园助手》](./docs/notes/BAT.md)
+
+## 秋招提前批信息汇总
+
+[秋招提前批及正式批信息汇总（含内推）](https://flowus.cn/af5163d0-8820-4300-9f2d-7a70f415ee14)
 
 ## 公众号
 
@@ -76,8 +80,6 @@ BAT大厂后端开发程序员，分享只是业🧡
 ![我要进大厂](https://xiaolongcoder.oss-cn-beijing.aliyuncs.com/imgs/Java2Top/concurrent202303201051885.png)
 
 微信搜索【**小龙coding**】，回复【**学习路线**】获取 **脑图地址**
-
-
 
 1. 如果您对本项目有任何建议或发现文中内容有误的，欢迎提交 issues 进行指正。
 2. 对于文中我没有涉及到知识点，欢迎提交 PR。
