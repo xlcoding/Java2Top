@@ -24,6 +24,8 @@ icon:
 
 对于编程学习来说， 学习操作系统有助于我们了解计算机的工作原理。操作系统中的很多思想、很多经典的算法，你都可以在我们日常开发使用的各种工具或者框架中找到它们的影子。
 
+![img](https://camo.githubusercontent.com/0cb75538b5ea92e01bafbaaa6c94f9f10910823731c0e896ae6d6140e0eb0c00/68747470733a2f2f747661312e73696e61696d672e636e2f6c617267652f30303833317253546c793167646c366a38627877376a333137733075307464392e6a7067)
+
 在学校我们老师也会叫我们写一个简单的操作系统来体会其中的原理。
 
 如果你能够自己独立写一个操作系统内核的话，即使是简易的实现，我相信也能够为自己的简历加分不少。
@@ -34,6 +36,8 @@ icon:
 
 `Proxyee Down` 是一款开源的免费 HTTP 高速下载器，底层使用`netty`开发，支持自定义 HTTP 请求下载且支持扩展功能，可以通过安装扩展实现特殊的下载需求。
 
+![img](https://xiaolongcoder.oss-cn-beijing.aliyuncs.com/imgs/Java2Top/java202304231414330.jpeg)
+
 本项目后端主要使用 `java` + `spring` + `boot` + `netty`，前端使用 `vue.js` + `iview`
 
 > 项目地址：https://github.com/proxyee-down-org/proxyee-down
@@ -41,6 +45,8 @@ icon:
 ### 3、基于人工智能的智慧校园助手
 
 本项目旨在为同城高校学子提供一个集校园服务，商城服务，二手交易，智能问答，消息推送，动态分享功能于一体的综合性智慧服务平台
+
+![img](https://xiaolongcoder.oss-cn-beijing.aliyuncs.com/imgs/Java2Top/java/k202304182303253.jpg)
 
 技术栈：SpringBoot+SpringCloud+Redis+Kafka+XXL-Job+Vue.js+其他第三方 SDK 等
 
@@ -99,6 +105,8 @@ version1.0 可以公众号后台回复【**基于人工智能的智慧校园助�
 ### 5、牛客论坛
 
 一个仿照牛客网实现的讨论社区，不仅实现了基本的注册，登录，发帖，评论，点赞，回复功能，同时使用前缀树实现敏感词过滤，使用wkhtmltopdf 生成长图和 PDF，实现网站 UV 和 DAU 统计，并将用户头像等信息存于七牛云服务器。
+
+![img](https://xiaolongcoder.oss-cn-beijing.aliyuncs.com/imgs/Java2Top/java202304231453823.png)
 
 **功能介绍**
 

@@ -58,7 +58,7 @@ Collection派生出了三个子接口：List、Set、Queue（Java5新增的队�
 
 ### 1、ArrayList 与 Vector 区别呢？为什么要⽤ArrayList取代Vector呢
 
-**实现：**都实现List接口，底层采用Object[] elementData数组，
+**实现**：都实现List接口，底层采用Object[] elementData数组，
 
 **线程安全**：Vector 使用了 Synchronized 来实现线程同步，是线程安全的，而 ArrayList 是非线程安全的。
 
